@@ -3,88 +3,103 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#F9F9F9">
 
     <TextView
         android:id="@+id/tv_gravity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gravedad:"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp" />
+        android:textSize="20sp"
+        android:textColor="#333333"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold" />
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:stretchColumns="1"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:background="#DDDDDD"
+        android:padding="4dp">
 
-        <TableRow>
+        <!-- Header Row -->
+        <TableRow android:background="#EEEEEE">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Eje"
                 android:textStyle="bold"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#000000"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Valor"
                 android:textStyle="bold"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#000000"/>
         </TableRow>
 
-        <TableRow>
+        <!-- Data Rows -->
+        <TableRow android:background="#FFFFFF">
             <TextView
                 android:id="@+id/label_x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="X:"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
             <TextView
                 android:id="@+id/tv_x"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0.0"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:background="#F9F9F9">
             <TextView
                 android:id="@+id/label_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Y:"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
             <TextView
                 android:id="@+id/tv_y"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0.0"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:background="#FFFFFF">
             <TextView
                 android:id="@+id/label_z"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Z:"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
             <TextView
                 android:id="@+id/tv_z"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0.0"
-                android:padding="4dp"
-                android:gravity="center"/>
+                android:padding="8dp"
+                android:gravity="center"
+                android:textColor="#444444"/>
         </TableRow>
 
     </TableLayout>
