@@ -1,106 +1,182 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#F9F9F9">
+    android:background="#F9F9F9"
+    android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tv_gravity"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Gravedad:"
-        android:textSize="20sp"
-        android:textColor="#333333"
-        android:layout_marginBottom="16dp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="1"
-        android:layout_marginTop="8dp"
-        android:background="#DDDDDD"
-        android:padding="4dp">
+        <!-- Título y tabla original -->
+        <TextView
+            android:id="@+id/tv_gravity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gravedad:"
+            android:textSize="20sp"
+            android:textColor="#333333"
+            android:layout_marginBottom="16dp"
+            android:textStyle="bold" />
 
-        <!-- Header Row -->
-        <TableRow android:background="#EEEEEE">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Eje"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#000000"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Valor"
-                android:textStyle="bold"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#000000"/>
-        </TableRow>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:layout_marginTop="8dp"
+            android:background="#DDDDDD"
+            android:padding="4dp">
 
-        <!-- Data Rows -->
-        <TableRow android:background="#FFFFFF">
-            <TextView
-                android:id="@+id/label_x"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="X:"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-            <TextView
-                android:id="@+id/tv_x"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-        </TableRow>
+            <!-- Fila de encabezado -->
+            <TableRow android:background="#EEEEEE">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eje"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#000000" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Valor"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#000000" />
+            </TableRow>
 
-        <TableRow android:background="#F9F9F9">
-            <TextView
-                android:id="@+id/label_y"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Y:"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-            <TextView
-                android:id="@+id/tv_y"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-        </TableRow>
+            <!-- Fila de datos X -->
+            <TableRow android:background="#FFFFFF">
+                <TextView
+                    android:id="@+id/label_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X:"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+                <TextView
+                    android:id="@+id/tv_x"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+            </TableRow>
 
-        <TableRow android:background="#FFFFFF">
-            <TextView
-                android:id="@+id/label_z"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Z:"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-            <TextView
-                android:id="@+id/tv_z"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0.0"
-                android:padding="8dp"
-                android:gravity="center"
-                android:textColor="#444444"/>
-        </TableRow>
+            <!-- Fila de datos Y -->
+            <TableRow android:background="#F9F9F9">
+                <TextView
+                    android:id="@+id/label_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Y:"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+                <TextView
+                    android:id="@+id/tv_y"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+            </TableRow>
 
-    </TableLayout>
-</LinearLayout>
+            <!-- Fila de datos Z -->
+            <TableRow android:background="#FFFFFF">
+                <TextView
+                    android:id="@+id/label_z"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Z:"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+                <TextView
+                    android:id="@+id/tv_z"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.0"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="#444444" />
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- Separador entre tabla y barras -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Barras de progreso -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            android:background="#FFFFFF"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progreso de X"
+                android:textSize="16sp"
+                android:textColor="#333333" />
+
+            <ProgressBar
+                android:id="@+id/pb_x"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="50"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progreso de Y"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:textColor="#333333" />
+
+            <ProgressBar
+                android:id="@+id/pb_y"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="50"
+                android:layout_marginTop="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Progreso de Z"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                android:textColor="#333333" />
+
+            <ProgressBar
+                android:id="@+id/pb_z"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="50"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
