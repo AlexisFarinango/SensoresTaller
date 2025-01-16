@@ -9,6 +9,14 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.widget.Button
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
 
 class MainActivity : AppCompatActivity(), SensorEventListener {
 
@@ -22,6 +30,10 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
     private lateinit var pbX: ProgressBar
     private lateinit var pbY: ProgressBar
     private lateinit var pbZ: ProgressBar
+
+    private lateinit var textCoordinates: TextView
+    private lateinit var btnGetLocation: Button
+    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +55,74 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         if (gravitySensor == null) {
             Toast.makeText(this, "Sensor de gravedad no disponible", Toast.LENGTH_LONG).show()
         }
+
+        textCoordinates = findViewById(R.id.textCoordinates)
+        btnGetLocation = findViewById(R.id.btnGetLocation)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+
+        btnGetLocation.setOnClickListener {
+            if (ActivityCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    100
+                )
+            } else {
+                getLocation()
+            }
+
+        }
+
     }
+
+    private fun getLocation() {
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+
+            return
+        }
+        fusedLocationClient.lastLocation
+            .addOnSuccessListener { location ->
+                if (location != null) {
+                    val latitude = location.latitude
+                    val longitude = location.longitude
+                    textCoordinates.text = "Latitud: $latitude\nLongitud: $longitude"
+                } else {
+                    textCoordinates.text = "No se pudo obtener la ubicación."
+                }
+            }
+            .addOnFailureListener {
+                textCoordinates.text = "Error al obtener la ubicación."
+            }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 100) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                getLocation()
+            } else {
+                Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 
     override fun onResume() {
         super.onResume()
