@@ -26,5 +26,7 @@
     <img src="https://github.com/user-attachments/assets/c676247c-cb0a-4e27-a0af-321b1159de7b" alt="Implementación de coordenadas con GPS" style="width: 60%; height: auto; border: 2px solid #ccc; border-radius: 8px;">
   </div>
 
+
+
  <h1>Edición y mejoramiento del Readme</h1>
   <p><strong>Responsable:</strong> Marcelo Pinzón</p>
