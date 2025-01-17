@@ -3,4 +3,6 @@
     <color name="purple_500">#9C27B0</color> <!-- Puedes usar cualquier código de color que desees -->
     <color name="purple_700">#7B1FA2</color>
     <color name="teal_200">#03DAC5</color>
+    <color name="green_200">#67CC30</color>
+
 </resources>
